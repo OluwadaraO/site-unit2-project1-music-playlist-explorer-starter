@@ -6,20 +6,109 @@
     
     <title>Music Playlist Explorer</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    
+    <script src="/music-playlist-creator/script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <!-- Your header content here -->
+    <header class="header">
+        <h1>Music Playlist Explorer</h1>
     </header>
 
-    <main> 
-        <!-- Your main content here -->
+    <main>
+        <div id="modal" class="modal-overlay">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class = "song">
+                    <img id="SongImage" src="/music-playlist-creator/assets/img/song.png" alt="Song Image">
+                    <div class="ArtistDetails">
+                    <h1 id="SongTitle">Song Title</h1>
+                    <h2 id="ArtistName">Creator Name</h2>
+                    </div>
+                </div>
+                <section class="SongBlock">
+                    <img src="/music-playlist-creator/assets/img/song.png" alt="Song1" class="SongBlockImage">
+                    <div class="SongDetails">
+                        <h1>Song Title 1</h1>
+                        <h2>Artist Name 1</h2>
+                        <h3>Album Name 1</h3>
+                    </div>
+                </section>
+                <section class="SongBlock">
+                    <img src="/music-playlist-creator/assets/img/song.png" alt="Song2" class="SongBlockImage">
+                    <div class="SongDetails">
+                        <h1>Song Title 2</h1>
+                        <h2>Artist Name 2</h2>
+                        <h3>Album Name 2</h3>
+                    </div>
+                </section>
+                <section class="SongBlock">
+                    <img src="/music-playlist-creator/assets/img/song.png" alt="Song1" class="SongBlockImage">
+                    <div class="SongDetails">
+                        <h1>Song Title 3</h1>
+                        <h2>Artist Name 3</h2>
+                        <h3>Album Name 3</h3>
+                    </div>
+                </section>
+            </div>
+        
+
+
+
+        </div>
+        <div class="playlist-cards" onclick="openModal({name: 'Playlist Title', imageUrl: '/music-playlist-creator/assets/img/song.png'})">
+            <div class="card">
+                <img class="image" src="/music-playlist-creator/assets/img/playlist.png" alt="Song 1">
+                <p id="PlaylistTitle">Playlist Title 1</p>
+                <p id="CreatorName">Creator Name 1</p>
+                <p id="LikeCount">1</p>
+            </div>
+            <section class="card">
+                <img class="image" src="/music-playlist-creator/assets/img/playlist.png" alt="Song 2">
+                <p>Playlist Title 2</p>
+                <p>Creator Name 2</p>
+                <p>2</p>
+            </section>
+            <section class="card">
+                <img class="image" src="/music-playlist-creator/assets/img/playlist.png" alt="Song 3">
+                <p>Playlist Title 3</p>
+                <p>Creator Name 3</p>
+                <p>3</p>
+            </section>
+            <section class="card">
+                <img class="image" src="/music-playlist-creator/assets/img/playlist.png" alt="Song 4">
+                <p>Playlist Title 4</p>
+                <p>Creator Name 4</p>
+                <p>4</p>
+            </section> 
+            <section class="card">
+                <img class="image" src="/music-playlist-creator/assets/img/playlist.png" alt="Song 5">
+                <p>Playlist Title 5</p>
+                <p>Creator Name 5</p>
+                <p>5</p>
+            </section>
+            <section class="card">
+                <img class="image" src="/music-playlist-creator/assets/img/playlist.png" alt="Song 6">
+                <p>Playlist Title 6</p>
+                <p>Creator Name 6</p>
+                <p>6</p>
+            </section>
+            <section class="card">
+                <img class="image" src="/music-playlist-creator/assets/img/playlist.png" alt="Song 7">
+                <p>Playlist Title 7</p>
+                <p>Creator Name 7</p>
+                <p>7</p>
+            </section>
+            <section class="card">
+                <img class="image" src="/music-playlist-creator/assets/img/playlist.png" alt="Song 8">
+                <p>Playlist Title 8</p>
+                <p>Creator Name 8</p>
+                <p>8</p>
+            </section>                                                                       
+        </div>
     </main>
 
-    <footer>
-        <!-- Your footer content here -->
+    <footer class="footer">
+        <h1>Footer</h1>
     </footer>
     <script src="data/data.js"></script>
     <script src="script.js"></script>
