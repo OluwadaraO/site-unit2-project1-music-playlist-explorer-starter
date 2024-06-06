@@ -2,44 +2,56 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color:lightcoral;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image: url('assets/img/backgrounddesign.jpg');
 }
+
 .playlist-cards{
     display: flex;
     flex-wrap: wrap;
     /* Making my display grid like */
     grid-template-columns: repeat(4, 1fr);
-    box-shadow: 0 4px 8px rgba(0, 0, 0 , 0.2);
-    /* Divide my 8 images into 4 equal rows*/
-}
-.card {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0 , 0.2);}
+    /* /* Divide my 8 images into 4 equal rows */
+
+.playlist-block{
     width: 250px;
-    border: solid white;
     padding: 10px;
     margin: 30px 60px 30px 60px;
     border-radius: 10px;
+    background-color: palevioletred;
+    color: white;
 }
-.card:hover{
-    background-color: #FF1493;
-}
-.image{
+.music-art{
     width: 250px;
     border-radius: 10px;
+    border:solid white;
 }
+.music-text{
+    border: 10px;
+    border-color: solid white;
+}
+.playlist-block:hover{
+    background-color: deeppink;
+ }
+
+.playlist-block.SongBlockImage{
+    width: 250px;
+    border-radius: 10px;
+ }
 .footer{
     clear: both;
-    background-color: pink;
-    padding: 10px 5px 10px 2px;
+    background-color: #FFF0F5;
+    padding: 10px 50px 10px 20px;
     margin: 2px;
-    display: flex;
 }
 .header{
-    background-color: #90EE90;
+    background-color: #FFF0F5;
     padding: 10px 50px 10px 20px;
     text-align: center;
+    font-size: 30px;
 }
 .modal-overlay{
     display: none;
@@ -50,12 +62,15 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 .modal-content{
-    background-color: white;
+    background-color: pink;
     margin: 15% auto;
     padding: 20px;
     border: 1px;
+    width: 50%;
+
 }
 
 .song {
@@ -74,11 +89,12 @@ body {
     cursor: pointer;
 }
 p {
-    color: white;
+    color: black;
 }
 #SongImage{
     width: 250px;
     margin: 20px;
+    border-radius: 20px;
 }
 #SongTitle{
     text-align: left;
@@ -96,13 +112,33 @@ p {
 .SongBlockImage{
     width: 150px;
     margin: 5px 10px 5px 10px;
+    border-radius: 20px;
 }
 .SongBlock{
-    border: solid grey;
+    border: solid white;
     display: flex;
     margin: 20px 20px 20px 20px;
+    border-radius: 20px;
 
 }
 .SongDetails{
     margin-left: 20px;
+}
+@media (max-width: 768px){
+    .playlist-cards{
+        width: 20%;
+    }
+    .modal-overlay{
+        width: 80%;
+    }
+}
+#modal.open{
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    width: 25%;
+    height: 25%;
 }
