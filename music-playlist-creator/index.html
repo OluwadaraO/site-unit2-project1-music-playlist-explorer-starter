@@ -12,6 +12,7 @@
 <body>
     <header class="header">
         <p>Music Playlist Explorer</p>
+        <button id="home-button">Home</button>
     </header>
 
     <main>
@@ -22,97 +23,20 @@
         <div id="modal" class="modal-overlay">
             <div class="modal-content" id = "modal-content">
                 <span class="close">&times;</span>
+                <div id = "songs">
                 <div class = "song">
-                    <img id="SongImage" alt="Song Image">
+                    <div class="music-block-trial">
+                        <img id="SongImage" alt="Song Image">
                     <div class="ArtistDetails">
-                    <h1 id="SongTitle"></h1>
-                    <h2 id="ArtistName"></h2>
+                        <h1 id="SongTitle"></h1>
+                        <h2 id="ArtistName"></h2>
                     </div>
                 </div>
-                <section class="SongBlock">
-                    <img alt="Song1" class="SongBlockImage">
-                    <div class="SongDetails">
-                        <h1>Song Title 1</h1>
-                        <h2>Artist Name 1</h2>
-                        <h3>Album Name 1</h3>
-                    </div>
-                </section>
-                <section class="SongBlock">
-                    <img alt="Song2" class="SongBlockImage">
-                    <div class="SongDetails">
-                        <h1>Song Title 2</h1>
-                        <h2>Artist Name 2</h2>
-                        <h3>Album Name 2</h3>
-                    </div>
-                </section>
-                <section class="SongBlock">
-                    <img alt="Song1" class="SongBlockImage">
-                    <div class="SongDetails">
-                        <h1>Song Title 3</h1>
-                        <h2>Artist Name 3</h2>
-                        <h3>Album Name 3</h3>
-                    </div>
-                </section>
-            </div>
-
-
-
-
+                <div>
+                    <button id="shuffleSong">Shuffle</button>
+                </div>
+                <p id="songs-list"></p>
         </div>
-
-
-
-            <!-- <section class="card">
-                <img class="image" src="/music-playlist-creator/assets/img/playlist.png" alt="Song 1">
-                <p id="PlaylistTitle">Playlist Title 1</p>
-                <p id="CreatorName">Creator Name 1</p>
-                <img id="LikeCount" src="/music-playlist-creator/assets/img/heart.png" width="20px" height="20px">
-            </section>
-
-
-            <section class="card">
-                <img class="image" src="/music-playlist-creator/assets/img/playlist.png" alt="Song 2">
-                <p>Playlist Title 2</p>
-                <p>Creator Name 2</p>
-                <img src="/music-playlist-creator/assets/img/heart.png" width="20px" height="20px">
-            </section>
-            <section class="card">
-                <img class="image" src="/music-playlist-creator/assets/img/playlist.png" alt="Song 3">
-                <p>Playlist Title 3</p>
-                <p>Creator Name 3</p>
-                <img src="/music-playlist-creator/assets/img/heart.png" width="20px" height="20px">
-            </section>
-            <section class="card">
-                <img class="image" src="/music-playlist-creator/assets/img/playlist.png" alt="Song 4">
-                <p>Playlist Title 4</p>
-                <p>Creator Name 4</p>
-                <img src="/music-playlist-creator/assets/img/heart.png" width="20px" height="20px">
-            </section>
-            <section class="card">
-                <img class="image" src="/music-playlist-creator/assets/img/playlist.png" alt="Song 5">
-                <p>Playlist Title 5</p>
-                <p>Creator Name 5</p>
-                <img src="/music-playlist-creator/assets/img/heart.png" width="20px" height="20px">
-            </section>
-            <section class="card">
-                <img class="image" src="/music-playlist-creator/assets/img/playlist.png" alt="Song 6">
-                <p>Playlist Title 6</p>
-                <p>Creator Name 6</p>
-                <img src="/music-playlist-creator/assets/img/heart.png" width="20px" height="20px">
-            </section>
-            <section class="card">
-                <img class="image" src="/music-playlist-creator/assets/img/playlist.png" alt="Song 7">
-                <p>Playlist Title 7</p>
-                <p>Creator Name 7</p>
-                <img src="/music-playlist-creator/assets/img/heart.png" width="20px" height="20px">
-            </section>
-            <section class="card">
-                <img class="image" src="/music-playlist-creator/assets/img/playlist.png" alt="Song 8">
-                <p>Playlist Title 8</p>
-                <p>Creator Name 8</p>
-                <img src="/music-playlist-creator/assets/img/heart.png" width="20px" height="20px">
-            </section> -->
-        <!-- </div> -->
     </main>
 
     <footer class="footer">

@@ -1,0 +1,43 @@
+#featuredPlaylist{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #FF69B4;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#featuredPlaylist:hover{
+    background-color: #FF0099;
+}
+body{
+    background-image: url('assets/img/featuredBackground.jpg');
+}
+.homePageHeader{
+    text-align: center;
+
+}
+.HomePagePlayList{
+    margin-top: 50px;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    height: 100%;
+    width: 100%;
+}
+.SongDetails{
+    margin-left: 30px;
+}
+.FeaturedImage{
+    cursor: pointer;
+    width: 600px;
+    height: auto;
+}
+.ImageDetails{
+    display: block;
+}
+/* .homePageFooter{
+    background-color: #FF0099;
+    clear: both;
+    padding: 10px 50px 10px 20px;
+    margin: 2px 0px 0px 0px;
+} */

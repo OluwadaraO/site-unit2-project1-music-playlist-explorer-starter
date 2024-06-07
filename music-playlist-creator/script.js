@@ -4,116 +4,118 @@ const span = document.getElementsByClassName("close")[0];
 const modalImage = document.getElementById('SongImage');
 const modalSongTitle = document.getElementById('SongTitle');
 const modalArtistName = document.getElementById('ArtistName');
-document.addEventListener("DOMContentLoaded", function() {
+const songsList = document.getElementById('songs-list');
+document.addEventListener("DOMContentLoaded", function () {
 
-// Playlist Block
+    // Playlist Block
     data.playlists.forEach(data => {
         const musicBlock = document.createElement("div");
         musicBlock.className = "playlist-block";
-        musicBlock.innerHTML = `<img class = "music-art" src="${data.playlist_art}"/>
-        <h2 class="music-text">${data.playlist_name}</h2>
-        <h3 class="music-text">${data.playlist_creator}</h3>
-        <p class="music-text">${data.likeCount}</p>
+        musicBlock.innerHTML = `
+        <img class = "music-art" src="${data.playlist_art}"/>
+        <h3 class="music-text">${data.playlist_name}</h3>
+        <h4 class="music-text">${data.playlist_creator}</h4>
+        <div class= "like-icon">
+        <p class="like-text" id=like-text-${data.playlistID}>${data.likeCount}</p>
+        <svg class="like-button" id=like-button-${data.playlistID}  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+        </svg>
+        </div>
         `;
         console.log(musicBlock);
         musicBlock.addEventListener("click", () => openModal(data));
         musicCards.appendChild(musicBlock);
 
-    })
-})
+        //Like Button
+        const heartLike = document.getElementById(`like-button-${data.playlistID}`);
+        const likeText = document.getElementById(`like-text-${data.playlistID}`);
+        heartLike.addEventListener("click", (event) => {
+            event.stopPropagation()
+            data.likeCount = data.likeCount + 1;
+            likeText.innerText = data.likeCount;
 
-// Opening and Closing Modal
-function openModal(data) {
-    document.getElementById('SongTitle').innerText = data.playlist_name;
-    document.getElementById('ArtistName').innerText = data.playlist_creator;
-    document.getElementById('SongImage').src = data.playlist_art;
-    modalblock.style.display = "block";
-
-    modalContent(data.songs);
-}
-span.onclick = function() {
-    modalblock.style.display = "none";
-}
-
-window.onclick = function(event){
-    if (event.target == modal){
-        modal.style.display = "none";
-    }
-}
-
-// Modal Content Visibiltiy
-function modalContent(playlist){
-    const modalMusicCards = document.createElement("div");
-
-
-    for(let idx = 0; idx < data.playlists[idx].songs.length; idx++) {
-        console.log("songs", data.playlists[idx].songs);
-        data.playlists[idx].songs.forEach(song => {
-            modalMusicCards.className = "modal-overlay-content";
-            modalMusicCards.innerHTML = `<img src="${song.cover_art}"/>
-            <h1>${song.title}</h1>
-            <h3>${song.artist}</h3>
-            <h5>${song.duration}</h5>
-            `;
-
-            modalblock.appendChild(modalMusicCards);
         })
+    })
 
-    document.getElementById("modal-content").appendChild(modalMusicCards);
+    // Opening and Closing Modal
+    function openModal(playlist) {
+        // let likeButton = document.getElementById(`like-button-${playlist.playlistID}`);
+        // if (likeButton.matches(":hover")) return;
+        document.getElementById('SongTitle').innerText = playlist.playlist_name;
+        document.getElementById('ArtistName').innerText = playlist.playlist_creator;
+        document.getElementById('SongImage').src = playlist.playlist_art;
+        modalblock.style.display = "block";
 
-}}
-modalContent(data.playlists);
+        modalContent(playlist);
+        let shuffleButton = document.getElementById("shuffleSong");
+        console.log(shuffleButton)
 
-
-
-
-//data.playlists[0];
-// for(let idx = 0; idx < data.playlists.length; idx++) {
-
-//     let card = document.createElement("section");
-//     card.classList.add("card");
-
-//     let image = document.createElement("img");
-//     image.src = data.playlists[idx].playlist_art;
-
-//     let name = document.createElement("p");
-//     name.innerText = data.playlists[idx].playlist_name;
-
-//     let artist = document.createElement("p");
-//     artist.innerText = data.playlists[idx].playlist_creator;
-
-//     card.appendChild(image);
-//     card.appendChild(name);
-//     card.appendChild(artist);
-
-//     document.getElementById("play-cards").appendChild(card);
+        shuffleButton.onclick = function () {
+            shuffleSongs(playlist);
+            // update HTML after shuffleSongs is called
+            // innerHtml, etc.
+            modalContent(playlist)
 
 
-// }
+        }
+
+        span.onclick = function () {
+            modalblock.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
 
 
-
-// const playlistTitle = document.getElementById('PlaylistTitle');
-// const playlistArtist = document.getElementById('PlaylistArtist');
-// const playlistImage = document.getElementById('PlaylistImage');
-// const playlistLike = document.getElementById('LikeCount');
-// function getMusicPlaylist(){
-//     let playlistTitle = document.createElement('h1');
-//     playlistTitle.innerText = 'Playlist Title';
-//     playlistArtist.innerText = 'Playlist Artist';
-//     playlistImage.src = 'Playlist Image';
-//     playlist.appendChild(playlistTitle);
-//     playlist.appendChild(playlistArtist);
-//     playlist.appendChild(playlistImage);
-// }
+        // Modal Content Visibiltiy
+        function modalContent(data) {
 
 
-// for (let i = 0; i < data.playlists[i].length; i++) {
-//     playListTitle = console.log(data.playlists[i].playlist_name);
-//     playListArtist = console.log(data.playlists[i].playlist_creator);
-//     playlistImage = console.log(data.playlists[i].playlist_art);
-//     playlistLike = console.log(data.playlists[i].likeCount);
-// }
-// const playlistSection = document.get...
-// fn add content
-    //playlistSection.document.appendChild(elements)
+            // document.getElementById("songs").innerHTML = '';
+            songsList.innerHTML = '';
+
+            data.songs.forEach(song => {
+                const modalMusicCards = document.createElement("div");
+                modalMusicCards.className = "modal-overlay-content";
+                modalMusicCards.innerHTML += `
+            <div class="overlay-blocks">
+                <div class= "modal-block-1">
+                    <img class = "modal-image-overlay" src="${song.cover_art}"/>
+                        <div class="modal-text-1">
+                            <p>${song.title}</p>
+                            <p>${song.artist}</p>
+                            <p>${song.album}</p>
+                        </div>
+                    <div class="duration">
+                        <p>${song.duration}</p>
+                    </div>
+                </div>
+            </div>
+            `
+                    ;
+                songsList.appendChild(modalMusicCards);
+            })
+        }
+    }
+});
+
+
+//Shuffle Button
+function shuffleSongs(playlist) {
+    for (let i = playlist.songs.length - 1; i > 0; i--) {
+        const shuffle = Math.floor(Math.random() * (i + 1));
+        [playlist.songs[i], playlist.songs[shuffle]] = [playlist.songs[shuffle], playlist.songs[i]];
+    }
+
+    return playlist
+}
+
+//Redirect you to featured page
+document.getElementById('home-button').addEventListener('click', function(){
+    window.location.href = './featured.html';
+
+
+})
