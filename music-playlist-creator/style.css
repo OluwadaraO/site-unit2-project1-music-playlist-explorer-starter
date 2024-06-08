@@ -47,6 +47,10 @@ body {
     padding: 10px 50px 10px 20px;
     margin: 2px;
     box-shadow: 5px 5px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
 .header{
     background-color: #FFF0F5;

@@ -77,9 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Modal Content Visibiltiy
         function modalContent(data) {
-
-
-            // document.getElementById("songs").innerHTML = '';
             songsList.innerHTML = '';
 
             data.songs.forEach(song => {

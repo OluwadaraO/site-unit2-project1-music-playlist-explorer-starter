@@ -51,8 +51,7 @@ body{
     margin-left: 40px;
 }
 .song-box{
-    /* border: solid white;
-    border-collapse: collapse; */
+    margin: 20px 30px 20px 20px;
     width: 110%;
     border-radius: 10px;
     padding: 0px;
@@ -63,25 +62,11 @@ body{
 .songDetailsSide{
     display: block;
     margin-left: 30px;
+    width: 70%;
 }
 .SongImage{
     width: 150px;
     height: 150px;
     border-radius: 10px;
 }
-.HomePagePlayList{
-    /* box-shadow: #FF0099; */
-    border: solid white;
-    /* width: 90%; */
-    align-items: center;
-    justify-content: center;
-}
-@media(max-width: 768px){
-    
-}
-/* .homePageFooter{
-    background-color: #FF0099;
-    clear: both;
-    padding: 10px 50px 10px 20px;
-    margin: 2px 0px 0px 0px;
-} */
+
