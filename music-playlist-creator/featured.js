@@ -1,57 +1,48 @@
 const musicHeader = document.getElementById('ImageDetails');
+const SongDetailsHome = document.getElementById('SongDetails');
 document.addEventListener("DOMContentLoaded", function () {
 
+    //function to move from the home page to the featured playlist
     featuredSongs = document.getElementById('FeaturedPlaylistSong');
-
     document.getElementById('featuredPlaylist').addEventListener('click', function() {
         window.location = './index.html'
     });
 
+    //function to make my random playlist and display its information
     let randomPlaylist = getRandomPlayList();
-    const HomePagePlayList = document.createElement("div");
-    HomePagePlayList.className = "ImageDetails";
-    HomePagePlayList.innerHTML = `
+    const  ImageDetails = document.createElement("div");
+    ImageDetails.className = "ImageDetails";
+    ImageDetails.innerHTML = `
     <img class="FeaturedImage" src="${randomPlaylist.playlist_art}">
     <p class="FeaturedPlaylistSongTitle">${randomPlaylist.playlist_name}</p>
     `
+    SongDetailVisible(randomPlaylist);
+    musicHeader.appendChild(ImageDetails);
 
-    console.log(HomePagePlayList);
-    musicHeader.appendChild(HomePagePlayList);
-    console.log(musicHeader);
+    //function to get Song Details from data file and display it
+    function SongDetailVisible(data){
+        SongDetailsHome.innerHTML = '';
+        data.songs.forEach(song => {
+            const SongDetails = document.createElement("div");
+            SongDetails.className = "SongDetails";
+            SongDetails.innerHTML += `
+            <div>
+            </div>
+            <div class="song-box">
+                <img class="SongImage" src="${song.cover_art}">
+                <div class="songDetailsSide">
+                    <p class="song-title">${song.title}</p>
+                    <p class="song-artist">${song.artist}</p>
+                    <p class="song-album">${song.album}</p>
+                </div>
+            </div>`
+        SongDetailsHome.appendChild(SongDetails);
+        });
+    }
 
-
-    //function to get a random playlist from data file
+    //function to generate a random playlist
     function getRandomPlayList() {
         const randomPlaylist = Math.floor(Math.random() * data.playlists.length);
         return data.playlists[randomPlaylist];
     }
-    // // Modal Content Visibiltiy
-    // function modalContent(data) {
-
-
-    //     // document.getElementById("songs").innerHTML = '';
-    //     songsList.innerHTML = '';
-
-    //     data.songs.forEach(song => {
-    //         const modalMusicCards = document.createElement("div");
-    //         modalMusicCards.className = "modal-overlay-content";
-    //         modalMusicCards.innerHTML += `
-    //     <div class="overlay-blocks">
-    //         <div class= "modal-block-1">
-    //             <img class = "modal-image-overlay" src="${song.cover_art}"/>
-    //                 <div class="modal-text-1">
-    //                     <p>${song.title}</p>
-    //                     <p>${song.artist}</p>
-    //                     <p>${song.album}</p>
-    //                 </div>
-    //             <div class="duration">
-    //                 <p>${song.duration}</p>
-    //             </div>
-    //         </div>
-    //     </div>
-    //     `
-    //             ;
-    //         songsList.appendChild(modalMusicCards);
-    //     })
-    // }
 });

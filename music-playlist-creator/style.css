@@ -46,6 +46,7 @@ body {
     background-color: #FFF0F5;
     padding: 10px 50px 10px 20px;
     margin: 2px;
+    box-shadow: 5px 5px;
 }
 .header{
     background-color: #FFF0F5;
@@ -53,6 +54,9 @@ body {
     text-align: center;
     font-size: 30px;
     display: block;
+    box-shadow: 10px 5px 5px 10px;
+    padding: 5px;
+
 }
 .modal-overlay{
     display: none;
@@ -95,10 +99,10 @@ body {
     color: black;
 } */
 #SongImage{
-    width: 250px;
+    width: 50%;
     margin: 20px;
     border-radius: 20px;
-    height: 250px;
+    height: 50%;
 }
 #SongTitle{
     text-align: left;
@@ -154,7 +158,8 @@ body {
     border: solid white;
     margin: 20px;
     height: 125px;
-    /* display: flex; */
+    /* display: flex;
+    flex-wrap: wrap; */
 }
 .like-button{
     width: 20px;
@@ -170,7 +175,7 @@ body {
     border-right: solid white;
 }
 #shuffleSong{
-    width:250px;
+    width:200px;
     height: 20px;
     background-color: deeppink;
     border-radius:10px;
@@ -187,17 +192,18 @@ body {
     align-content: top; */
 }
 .modal-text-1{
-    margin: 30px;
+    /* margin: 2px; */
     margin-top: 0px;
     /* border: solid white; */
-    padding: 0px 0 0 0;
+    padding: 0;
+    font-size: 12px;
 }
-.duration{
+/* duration{
     margin-left: auto;
     margin-top: auto;
     margin-bottom: auto;
     padding: 20px;
-}
+} */
 #home-button{
     padding: 10px 20px;
     font-size: 16px;
@@ -209,3 +215,58 @@ body {
 #home-button:hover{
     background-color: #FF0099;
 }
+#deleteButton{
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #FF69B4;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.ArtistDetails{
+    font-size: 50%;
+    margin-top: 20px;
+}
+
+
+button.delete {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    /* background-image: url(/assets/img/trash-solid.svg); */
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    /* cursor: pointer; */
+    outline: inherit;
+    display: none;
+}
+img.svgDelete {
+    width: 20px;
+    background: rgb(255 255 255 / 50%);
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.playlist-block:hover .delete{
+    display: block;
+}
+
+.playlist-block {
+    position: relative;
+}
+.SearchBar{
+    width: 40%;
+}
+/* header{
+    display: inline-block;
+} */
+/* .modal-block-1{
+
+} */
+/* .headerSearchBar{
+    display: flex;
+}
+.SearchBar{} */

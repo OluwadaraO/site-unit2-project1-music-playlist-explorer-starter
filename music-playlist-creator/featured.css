@@ -11,9 +11,12 @@
 }
 body{
     background-image: url('assets/img/featuredBackground.jpg');
+    overflow: auto;
 }
 .homePageHeader{
     text-align: center;
+    box-shadow: 10px 5px 5px 10px;
+    padding: 5px;
 
 }
 .HomePagePlayList{
@@ -25,15 +28,56 @@ body{
     width: 100%;
 }
 .SongDetails{
-    margin-left: 30px;
+    margin: 10px 10px 10px 10px;
+    /* padding-left: 20px; */
+    width: 80%;
+    float: right;
+
 }
 .FeaturedImage{
     cursor: pointer;
-    width: 600px;
+    width: 200%;
     height: auto;
+    border-radius: 10px;
+    padding: 3px;
+    margin: 20px 60px 30px 10px;
 }
 .ImageDetails{
     display: block;
+    border-radius: 10px;
+}
+.FeaturedPlaylistSongTitle{
+    font-size: 50px;
+    margin-left: 40px;
+}
+.song-box{
+    /* border: solid white;
+    border-collapse: collapse; */
+    width: 110%;
+    border-radius: 10px;
+    padding: 0px;
+}
+.song-box{
+    display: flex;
+}
+.songDetailsSide{
+    display: block;
+    margin-left: 30px;
+}
+.SongImage{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+.HomePagePlayList{
+    /* box-shadow: #FF0099; */
+    border: solid white;
+    /* width: 90%; */
+    align-items: center;
+    justify-content: center;
+}
+@media(max-width: 768px){
+    
 }
 /* .homePageFooter{
     background-color: #FF0099;
