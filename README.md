@@ -2,7 +2,7 @@
 
 ## Unit 2 Assignment: Music Playlist Explorer
 
-Submitted by: Oluwadara
+Submitted by: Dara Oyedun
 
 Estimated time spent: 45 hours spent in total
 
@@ -51,10 +51,7 @@ Deployed Application (optional): [Music Playlist Explorer Deployed Site](ADD_LIN
   - [ ] Implement a dropdown or button options that allow users to sort the playlist by name, number of likes, or date added.
 
 ### Walkthrough Video
-
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video actually renders and is playable when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
-
-`ADD_EMBEDDED_CODE_HERE`
+https://www.loom.com/share/4269b4c51fc445e7b0f33781463a821d?sid=7316f8ad-63e5-4f44-8999-1c7803d59b9b
 
 ### Reflection
 
